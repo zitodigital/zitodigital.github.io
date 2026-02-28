@@ -15,6 +15,10 @@
     <meta name="author" content="Zito Digital" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://zitodigital.com/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Zito Digital | Website Growth Systems & Software Consulting" />
@@ -123,10 +127,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 0.9rem;
+        flex-wrap: nowrap;
         position: sticky;
         top: 0.8rem;
         z-index: 40;
-        padding: 0.8rem 1rem;
+        padding: 0.38rem 0.7rem;
         margin-top: 0.8rem;
         border: 2px solid var(--line);
         border-radius: 14px;
@@ -148,21 +154,59 @@
         );
       }
 
-      .logo {
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        min-width: 0;
+        flex: 1 1 auto;
+      }
+
+      .logo-pair {
+        display: inline-flex;
+        align-items: center;
+        gap: 0;
+        min-width: 0;
+      }
+
+      .nav-logo {
+        width: 52px;
+        height: 52px;
+        border-radius: 8px;
+        object-fit: contain;
+        flex: 0 0 auto;
+      }
+
+      .nav-wordmark {
+        height: 62px;
+        width: auto;
+        object-fit: contain;
+        flex: 0 1 auto;
+        max-width: min(620px, 70vw);
         margin: 0;
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-size: 1.35rem;
+        padding: 0;
+        display: block;
+      }
+
+      .logo-light {
+        display: none;
+      }
+
+      body[data-theme="light"] .logo-dark {
+        display: none;
+      }
+
+      body[data-theme="light"] .logo-light {
+        display: inline-block;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
         gap: 0.8rem;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: flex-end;
+        flex: 0 0 auto;
       }
 
       .small-link {
@@ -393,12 +437,19 @@
 
       @media (max-width: 920px) {
         .nav {
+          flex-wrap: nowrap;
           top: 0.45rem;
-          padding: 0.7rem 0.8rem;
+          padding: 0.34rem 0.56rem;
         }
 
-        .logo {
-          font-size: 1.15rem;
+        .nav-brand {
+          width: auto;
+          min-width: 0;
+        }
+
+        .nav-wordmark {
+          height: 44px;
+          max-width: min(360px, 52vw);
         }
 
         .hero {
@@ -420,8 +471,36 @@
       }
 
       @media (max-width: 600px) {
+        .nav {
+          padding: 0 0.46rem;
+        }
+
+        .nav-logo {
+          width: 34px;
+          height: 34px;
+        }
+
+        .nav-wordmark {
+          height: 42px;
+          max-width: min(360px, 66vw);
+          margin: 0;
+          padding: 0;
+        }
+
         .nav-right {
-          gap: 0.55rem;
+          gap: 0.35rem;
+        }
+
+        .btn-nav {
+          padding: 0.33rem 0.5rem;
+          font-size: 0.72rem;
+          margin: 0.3rem 0.08rem;
+        }
+
+        .theme-toggle {
+          padding: 0.3rem 0.45rem;
+          font-size: 0.72rem;
+          margin: 0.3rem 0.08rem;
         }
 
         .small-link {
@@ -440,7 +519,7 @@
         "@type": "ProfessionalService",
         "name": "Zito Digital",
         "url": "https://zitodigital.com/",
-        "email": "zito@zitodigital.com",
+        "email": "inquire@zitodigital.com",
         "description": "Website growth systems for service businesses plus senior software consulting and engineering support.",
         "areaServed": "United States"
       }
@@ -450,9 +529,16 @@
     <div class="top-fade" aria-hidden="true"></div>
     <div class="container">
       <header class="nav">
-        <p class="logo">Zito Digital</p>
+        <div class="nav-brand">
+          <div class="logo-pair" aria-label="Zito Digital">
+            <img class="nav-logo logo-dark" src="/mark-dark.png" alt="Zito Digital mark" width="42" height="42" />
+            <img class="nav-logo logo-light" src="/mark-light.png" alt="Zito Digital mark" width="42" height="42" />
+            <img class="nav-wordmark logo-dark" src="/wordmark-dark.png" alt="Zito Digital" />
+            <img class="nav-wordmark logo-light" src="/wordmark-light.png" alt="Zito Digital" />
+          </div>
+        </div>
         <div class="nav-right">
-          <a class="btn btn-primary btn-nav" href="mailto:zito@zitodigital.com?subject=Project%20Inquiry">Inquire</a>
+          <a class="btn btn-primary btn-nav" href="mailto:inquire@zitodigital.com?subject=Project%20Inquiry">Inquire</a>
           <button id="theme-toggle" class="theme-toggle" type="button">Light Mode</button>
         </div>
       </header>
@@ -461,14 +547,14 @@
         <section class="hero">
           <div>
             <span class="chip stagger">From First Click to Full Stack</span>
-            <h1 class="stagger delay-1">Websites that win business. Expert engineering to scale faster.</h1>
+            <h1 class="stagger delay-1">Websites that win business.<br />Expert engineering to scale faster.</h1>
             <p class="stagger delay-2">
               For service businesses: we build and manage websites that drive more
               qualified leads. For product and platform teams: we provide software
               consulting to design, build, and scale reliable systems.
             </p>
             <div class="actions stagger delay-3">
-              <a class="btn btn-primary" href="mailto:zito@zitodigital.com?subject=Project%20Inquiry">Inquire</a>
+              <a class="btn btn-primary" href="mailto:inquire@zitodigital.com?subject=Project%20Inquiry">Inquire</a>
             </div>
           </div>
 
