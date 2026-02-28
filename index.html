@@ -34,6 +34,15 @@
       name="twitter:description"
       content="Website growth systems and software consulting for teams that need both lead generation and technical execution."
     />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DN8S79SDD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-8DN8S79SDD");
+    </script>
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@500;700;800&display=swap");
@@ -320,18 +329,26 @@
 
       .btn-primary {
         color: var(--btn-primary-text);
-        background: linear-gradient(115deg, var(--salmon) 0%, var(--btn-primary-mid) 48%, var(--mustard) 100%);
+        background: linear-gradient(115deg, #ffe08f 0%, var(--salmon) 32%, var(--btn-primary-mid) 62%, var(--mustard) 100%);
         border: 2px solid var(--btn-primary-border);
         box-shadow:
-          0 12px 26px rgba(15, 23, 42, 0.35),
-          4px 4px 0 rgba(15, 23, 42, 0.24);
+          0 14px 30px rgba(15, 23, 42, 0.42),
+          0 0 0 2px rgba(233, 179, 42, 0.22),
+          5px 5px 0 rgba(15, 23, 42, 0.26);
+        filter: saturate(1.1);
       }
 
       .btn-primary:hover {
-        transform: translateY(-2px) scale(1.01);
+        transform: translateY(-3px) scale(1.03);
         box-shadow:
-          0 16px 30px rgba(15, 23, 42, 0.4),
-          6px 6px 0 rgba(15, 23, 42, 0.28);
+          0 20px 36px rgba(15, 23, 42, 0.46),
+          0 0 0 3px rgba(233, 179, 42, 0.3),
+          7px 7px 0 rgba(15, 23, 42, 0.3);
+      }
+
+      .btn-primary:focus-visible {
+        outline: 2px solid var(--link);
+        outline-offset: 2px;
       }
 
       .btn-secondary {
