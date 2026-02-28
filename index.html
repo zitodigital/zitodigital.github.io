@@ -463,6 +463,27 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
       }
 
+      .theme-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.66rem;
+        line-height: 1;
+        pointer-events: none;
+        opacity: 0.85;
+        user-select: none;
+      }
+
+      .theme-icon-sun {
+        left: 7px;
+        color: #2a210f;
+      }
+
+      .theme-icon-moon {
+        right: 7px;
+        color: var(--ink);
+      }
+
       .theme-switch input:checked + .theme-slider {
         background: rgba(31, 49, 98, 0.16);
       }
@@ -680,6 +701,8 @@
           <label class="theme-switch" title="Toggle theme">
             <input id="theme-toggle" type="checkbox" aria-label="Toggle theme" />
             <span class="theme-slider"></span>
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
           </label>
         </div>
       </header>
