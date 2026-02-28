@@ -3,119 +3,434 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zito Digital</title>
+    <title>Zito Digital | Web Design for Service Businesses</title>
     <meta
       name="description"
-      content="Websites and local growth systems for service businesses."
+      content="Zito Digital builds sleek, high-converting websites for service businesses, including trades like plumbing and industrial piping."
     />
+    <meta
+      name="keywords"
+      content="web design for service businesses, plumber website design, contractor website design, local SEO websites, Zito Digital"
+    />
+    <meta name="author" content="Zito Digital" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://zitodigital.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Zito Digital | Sleek Websites That Win More Leads" />
+    <meta
+      property="og:description"
+      content="We create premium websites for service businesses that load fast, look sharp, and turn traffic into customers."
+    />
+    <meta property="og:url" content="https://zitodigital.com/" />
+    <meta property="og:site_name" content="Zito Digital" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zito Digital | Web Design for Service Businesses" />
+    <meta
+      name="twitter:description"
+      content="Premium websites and local SEO foundations for companies that need more qualified leads."
+    />
+
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@500;700;800&display=swap");
+
       :root {
-        --bg: #070b14;
-        --bg-2: #0e1629;
-        --card: rgba(255, 255, 255, 0.08);
-        --card-border: rgba(255, 255, 255, 0.18);
-        --text: #f8fafc;
-        --muted: #cbd5e1;
-        --accent: #22d3ee;
-        --accent-2: #3b82f6;
+        --bg: #f3ebdc;
+        --ink: #1f2a44;
+        --muted: #4a5369;
+        --navy: #223352;
+        --card: #fbf7ef;
+        --line: #1f2a44;
+        --salmon: #d86f54;
+        --mustard: #f0b45d;
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
-        color: var(--text);
+        color: var(--ink);
+        font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
         background:
-          radial-gradient(1200px 700px at 20% 10%, #1e293b 0%, transparent 60%),
-          radial-gradient(800px 500px at 85% 75%, #1d4ed8 0%, transparent 65%),
-          linear-gradient(155deg, var(--bg) 0%, var(--bg-2) 100%);
-        padding: 24px;
+          radial-gradient(1000px 500px at 8% 0%, rgba(216, 111, 84, 0.16), transparent 72%),
+          radial-gradient(900px 680px at 100% 100%, rgba(240, 180, 93, 0.2), transparent 70%),
+          linear-gradient(155deg, #f7f1e3 0%, var(--bg) 55%, #efe6d5 100%);
       }
 
-      .shell {
-        width: min(860px, 100%);
-        border: 1px solid var(--card-border);
-        background: var(--card);
-        backdrop-filter: blur(10px);
-        border-radius: 24px;
-        padding: clamp(28px, 4vw, 48px);
-        box-shadow:
-          0 24px 80px rgba(2, 6, 23, 0.5),
-          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      .grain::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(
+          90deg,
+          rgba(31, 42, 68, 0.03) 0,
+          rgba(31, 42, 68, 0.03) 1px,
+          transparent 1px,
+          transparent 24px
+        );
+        opacity: 0.6;
       }
 
-      .brand {
-        margin: 0 0 18px;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        color: var(--muted);
+      .container {
+        width: min(1120px, 92vw);
+        margin-inline: auto;
       }
 
-      h1 {
-        margin: 0 0 14px;
-        font-size: clamp(2rem, 6vw, 3.5rem);
-        line-height: 1.05;
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.4rem 0;
       }
 
-      p {
+      .logo {
         margin: 0;
-        max-width: 62ch;
-        font-size: clamp(1rem, 2vw, 1.125rem);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 1.35rem;
+      }
+
+      .small-link {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 170ms ease;
+      }
+
+      .small-link:hover {
+        border-color: var(--muted);
+      }
+
+      .hero {
+        padding: 4rem 0 2.2rem;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 2rem;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2.4rem, 6vw, 5rem);
+        line-height: 0.92;
+        letter-spacing: -0.02em;
+        color: var(--navy);
+      }
+
+      .hero p {
+        margin: 1.2rem 0 0;
+        max-width: 57ch;
         line-height: 1.6;
         color: var(--muted);
       }
 
+      .chip {
+        display: inline-block;
+        margin-bottom: 1.1rem;
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        border: 2px solid var(--line);
+        background: #f8e0be;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .panel {
+        align-self: end;
+        border: 2px solid var(--line);
+        background: var(--card);
+        border-radius: 16px;
+        padding: 1.1rem;
+        box-shadow: 8px 8px 0 rgba(31, 42, 68, 0.12);
+      }
+
+      .panel h2 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .panel p {
+        margin: 0.6rem 0 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.7rem;
+        margin-top: 1rem;
+      }
+
+      .metric {
+        border: 2px solid var(--line);
+        border-radius: 12px;
+        padding: 0.8rem;
+        background: #fdf6e8;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.2rem;
+        color: var(--salmon);
+      }
+
+      .metric span {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
       .actions {
-        margin-top: 30px;
+        margin-top: 1.4rem;
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
       }
 
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
         text-decoration: none;
-        font-weight: 700;
-        color: #041225;
-        background: linear-gradient(120deg, var(--accent), var(--accent-2));
-        border-radius: 999px;
-        padding: 14px 22px;
+        font-weight: 800;
+        padding: 0.78rem 1.15rem;
+        border-radius: 10px;
         transition: transform 140ms ease, box-shadow 140ms ease;
-        box-shadow: 0 10px 30px rgba(34, 211, 238, 0.35);
+      }
+
+      .btn-primary {
+        color: #fff8ef;
+        background: var(--salmon);
+        border: 2px solid #9d3b27;
+        box-shadow: 4px 4px 0 rgba(157, 59, 39, 0.2);
+      }
+
+      .btn-secondary {
+        color: var(--ink);
+        border: 2px solid var(--line);
+        background: #f8e0be;
       }
 
       .btn:hover {
         transform: translateY(-1px);
-        box-shadow: 0 14px 36px rgba(34, 211, 238, 0.44);
       }
 
-      .foot {
-        margin-top: 18px;
-        font-size: 0.9rem;
-        color: #94a3b8;
+      .grid {
+        padding: 2.2rem 0 5rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem;
+      }
+
+      .card {
+        border: 2px solid var(--line);
+        border-radius: 16px;
+        padding: 1.25rem;
+        background: var(--card);
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 8px 8px 0 rgba(31, 42, 68, 0.1);
+      }
+
+      .card h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.5rem;
+        color: var(--navy);
+      }
+
+      .card p {
+        margin: 0.7rem 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .card a {
+        color: #194a8a;
+      }
+
+      .card ul,
+      .card ol {
+        margin: 0.75rem 0 0;
+        padding-left: 1.05rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .card li + li {
+        margin-top: 0.42rem;
+      }
+
+      .stagger {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: rise 520ms ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 120ms;
+      }
+
+      .delay-2 {
+        animation-delay: 220ms;
+      }
+
+      .delay-3 {
+        animation-delay: 320ms;
+      }
+
+      .delay-4 {
+        animation-delay: 420ms;
+      }
+
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 920px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+          padding-top: 1.6rem;
+        }
+
+        .card {
+          height: auto;
+        }
+
+        .metrics {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 600px) {
+        .metrics {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Zito Digital",
+        "url": "https://zitodigital.com/",
+        "email": "zito@zitodigital.com",
+        "description": "Web design and SEO-focused website development for service businesses.",
+        "areaServed": "United States"
+      }
+    </script>
   </head>
-  <body>
-    <main class="shell">
-      <p class="brand">Zito Digital</p>
-      <h1>Sleek websites for service businesses.</h1>
-      <p>
-        Fast launch, clean design, and clear lead flow. If you want a simple
-        site that looks sharp and converts, send a quick message.
-      </p>
-      <div class="actions">
-        <a class="btn" href="mailto:zito@zitodigital.com?subject=Website%20Inquiry">
-          Contact
-        </a>
-      </div>
-    </main>
+  <body class="grain">
+    <div class="container">
+      <header class="nav">
+        <p class="logo">Zito Digital</p>
+        <a class="small-link" href="#example">Client Example</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div>
+            <span class="chip stagger">Web Design + Local SEO</span>
+            <h1 class="stagger delay-1">Sleek websites built to rank and convert.</h1>
+            <p class="stagger delay-2">
+              Zito Digital helps service companies dominate local search with fast,
+              premium websites. Strong messaging, clear offers, and conversion-first
+              UX so your phone rings more often.
+            </p>
+            <div class="actions stagger delay-3">
+              <a class="btn btn-primary" href="mailto:zito@zitodigital.com?subject=Website%20Inquiry">Inquire</a>
+              <a class="btn btn-secondary" href="#example">See Example</a>
+            </div>
+          </div>
+
+          <aside class="panel stagger delay-2">
+            <h2>Built for service businesses</h2>
+            <p>Plumbing, contracting, HVAC, and industrial teams that need real inbound demand.</p>
+            <div class="metrics">
+              <div class="metric">
+                <strong>&lt;2s</strong>
+                <span>Target load speed</span>
+              </div>
+              <div class="metric">
+                <strong>SEO</strong>
+                <span>On-page structure</span>
+              </div>
+              <div class="metric">
+                <strong>24/7</strong>
+                <span>Lead capture</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="grid">
+          <article id="example" class="card stagger delay-3">
+            <h3>Client Example: DP Piping</h3>
+            <p>
+              Industrial service website structure with over 500 unique pages for broad
+              service coverage and stronger local search visibility.
+            </p>
+            <p>
+              Live site:
+              <a href="https://dppiping.com/" target="_blank" rel="noopener noreferrer">dppiping.com</a>
+            </p>
+          </article>
+
+          <article class="card stagger delay-4">
+            <h3>Basic Plan</h3>
+            <ul>
+              <li>Core site build: Home, Services, child pages, areas, FAQs, About, Contact.</li>
+              <li>SEO foundations, analytics dashboard, and Google/Bing submissions.</li>
+              <li>Hosting, SSL, domain + email management, and maintenance support.</li>
+              <li>Plan limits: 5 GB mailbox/user and 250 form submissions/month.</li>
+            </ul>
+          </article>
+
+          <article class="card stagger delay-4">
+            <h3>Custom Solutions (Quoted)</h3>
+            <ul>
+              <li>Migration off existing platforms to a cleaner long-term stack.</li>
+              <li>Provider setup and migrations for Microsoft 365 or Google Workspace.</li>
+              <li>Custom backends, API work, and database integrations.</li>
+              <li>AI integrations for support, lead handling, and workflow automation.</li>
+              <li>Additional pages, design updates, and ads management add-ons.</li>
+            </ul>
+          </article>
+
+          <article class="card stagger delay-4">
+            <h3>Zero Commitment + Next Steps</h3>
+            <ul>
+              <li>Live video walkthrough before commitment.</li>
+              <li>Approve the direction, then full build begins.</li>
+              <li>Month-to-month service, cancel anytime, no long-term contract.</li>
+              <li>Schedule call, approve direction, build, then launch.</li>
+            </ul>
+            <p>
+              <strong>Built by a Senior SWE:</strong> 10+ years shipping production
+              systems, not just brochure sites.
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
-
