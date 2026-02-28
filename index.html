@@ -3,32 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zito Digital | Web Design for Service Businesses</title>
+    <title>Zito Digital | Website Growth Systems & Software Consulting</title>
     <meta
       name="description"
-      content="Zito Digital builds sleek, high-converting websites for service businesses, including trades like plumbing and industrial piping."
+      content="Two focused tracks: website build and maintenance for service businesses, plus senior software consulting across Node, React, Go, Scala, Kubernetes, Docker, Terraform, and AWS."
     />
     <meta
       name="keywords"
-      content="web design for service businesses, plumber website design, contractor website design, local SEO websites, Zito Digital"
+      content="service business website design, local SEO web development, website maintenance, software consulting, Node.js, React, Go, Scala, Kubernetes, Docker, Terraform, AWS"
     />
     <meta name="author" content="Zito Digital" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://zitodigital.com/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Zito Digital | Sleek Websites That Win More Leads" />
+    <meta property="og:title" content="Zito Digital | Website Growth Systems & Software Consulting" />
     <meta
       property="og:description"
-      content="We create premium websites for service businesses that load fast, look sharp, and turn traffic into customers."
+      content="Website build and maintenance for service businesses plus senior software consulting and platform engineering."
     />
     <meta property="og:url" content="https://zitodigital.com/" />
     <meta property="og:site_name" content="Zito Digital" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Zito Digital | Web Design for Service Businesses" />
+    <meta name="twitter:title" content="Zito Digital | Website Growth Systems & Software Consulting" />
     <meta
       name="twitter:description"
-      content="Premium websites and local SEO foundations for companies that need more qualified leads."
+      content="Website growth systems and software consulting for teams that need both lead generation and technical execution."
     />
 
     <style>
@@ -53,6 +53,10 @@
         --bg-grad-c: linear-gradient(155deg, #060a10 0%, #091017 55%, #0c1724 100%);
         --grain-color: rgba(234, 244, 255, 0.04);
         --shadow-off: 8px 8px 0 rgba(2, 8, 18, 0.35);
+        --nav-bg: rgba(9, 16, 23, 0.86);
+        --fade-solid: rgba(9, 16, 23, 0.98);
+        --fade-mid: rgba(9, 16, 23, 0.78);
+        --fade-clear: rgba(9, 16, 23, 0);
       }
 
       body[data-theme="light"] {
@@ -74,6 +78,10 @@
         --bg-grad-c: linear-gradient(155deg, #f7f1e3 0%, #f3ebdc 55%, #efe6d5 100%);
         --grain-color: rgba(31, 42, 68, 0.03);
         --shadow-off: 8px 8px 0 rgba(31, 42, 68, 0.1);
+        --nav-bg: rgba(243, 235, 220, 0.88);
+        --fade-solid: rgba(243, 235, 220, 0.98);
+        --fade-mid: rgba(243, 235, 220, 0.8);
+        --fade-clear: rgba(243, 235, 220, 0);
       }
 
       * {
@@ -115,7 +123,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.4rem 0;
+        position: sticky;
+        top: 0.8rem;
+        z-index: 40;
+        padding: 0.8rem 1rem;
+        margin-top: 0.8rem;
+        border: 2px solid var(--line);
+        border-radius: 14px;
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+      }
+
+      .top-fade {
+        position: fixed;
+        inset: 0 0 auto 0;
+        height: 170px;
+        z-index: 25;
+        pointer-events: none;
+        background: linear-gradient(
+          to bottom,
+          var(--fade-solid) 0%,
+          var(--fade-mid) 52%,
+          var(--fade-clear) 100%
+        );
       }
 
       .logo {
@@ -131,6 +161,8 @@
         display: flex;
         align-items: center;
         gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
 
       .small-link {
@@ -259,6 +291,12 @@
         transform: translateY(-1px);
       }
 
+      .btn-nav {
+        padding: 0.48rem 0.8rem;
+        font-size: 0.83rem;
+        box-shadow: none;
+      }
+
       .grid {
         padding: 2.2rem 0 5rem;
         display: grid;
@@ -271,7 +309,7 @@
         border-radius: 16px;
         padding: 1.25rem;
         background: var(--card);
-        height: 340px;
+        height: 380px;
         display: flex;
         flex-direction: column;
         box-shadow: var(--shadow-off);
@@ -354,6 +392,15 @@
       }
 
       @media (max-width: 920px) {
+        .nav {
+          top: 0.45rem;
+          padding: 0.7rem 0.8rem;
+        }
+
+        .logo {
+          font-size: 1.15rem;
+        }
+
         .hero {
           grid-template-columns: 1fr;
         }
@@ -373,6 +420,14 @@
       }
 
       @media (max-width: 600px) {
+        .nav-right {
+          gap: 0.55rem;
+        }
+
+        .small-link {
+          font-size: 0.86rem;
+        }
+
         .metrics {
           grid-template-columns: 1fr;
         }
@@ -386,17 +441,18 @@
         "name": "Zito Digital",
         "url": "https://zitodigital.com/",
         "email": "zito@zitodigital.com",
-        "description": "Web design and SEO-focused website development for service businesses.",
+        "description": "Website growth systems for service businesses plus senior software consulting and engineering support.",
         "areaServed": "United States"
       }
     </script>
   </head>
   <body class="grain">
+    <div class="top-fade" aria-hidden="true"></div>
     <div class="container">
       <header class="nav">
         <p class="logo">Zito Digital</p>
         <div class="nav-right">
-          <a class="small-link" href="#example">Client Example</a>
+          <a class="btn btn-primary btn-nav" href="mailto:zito@zitodigital.com?subject=Project%20Inquiry">Inquire</a>
           <button id="theme-toggle" class="theme-toggle" type="button">Light Mode</button>
         </div>
       </header>
@@ -404,84 +460,93 @@
       <main>
         <section class="hero">
           <div>
-            <span class="chip stagger">Web Design + Local SEO</span>
-            <h1 class="stagger delay-1">Sleek websites built to rank and convert.</h1>
+            <span class="chip stagger">From First Click to Full Stack</span>
+            <h1 class="stagger delay-1">Websites that win business. Expert engineering to scale faster.</h1>
             <p class="stagger delay-2">
-              Zito Digital helps service companies dominate local search with fast,
-              premium websites. Strong messaging, clear offers, and conversion-first
-              UX so your phone rings more often.
+              For service businesses: we build and manage websites that drive more
+              qualified leads. For product and platform teams: we provide software
+              consulting to design, build, and scale reliable systems.
             </p>
             <div class="actions stagger delay-3">
-              <a class="btn btn-primary" href="mailto:zito@zitodigital.com?subject=Website%20Inquiry">Inquire</a>
-              <a class="btn btn-secondary" href="#example">See Example</a>
+              <a class="btn btn-primary" href="mailto:zito@zitodigital.com?subject=Project%20Inquiry">Inquire</a>
             </div>
           </div>
 
           <aside class="panel stagger delay-2">
-            <h2>Built for service businesses</h2>
-            <p>Plumbing, contracting, HVAC, and industrial teams that need real inbound demand.</p>
+            <h2>Get what you need now</h2>
+            <p>Start with website growth systems, software consulting, or a blended engagement that combines both.</p>
             <div class="metrics">
               <div class="metric">
-                <strong>&lt;2s</strong>
-                <span>Target load speed</span>
+                <strong>Websites</strong>
+                <span>Build + Maintenance</span>
               </div>
               <div class="metric">
-                <strong>SEO</strong>
-                <span>On-page structure</span>
+                <strong>Consulting</strong>
+                <span>Architecture + Delivery</span>
               </div>
               <div class="metric">
-                <strong>24/7</strong>
-                <span>Lead capture</span>
+                <strong>Stack</strong>
+                <span>Cloud + DevOps + Apps</span>
               </div>
             </div>
           </aside>
         </section>
 
         <section class="grid">
-          <article id="example" class="card stagger delay-3">
-            <h3>Client Example: DP Piping</h3>
+          <article id="website-track" class="card stagger delay-3">
+            <h3>Track 1: Business Website Program</h3>
             <p>
-              Industrial service website structure with over 500 unique pages for broad
-              service coverage and stronger local search visibility.
+              Get a complete, professional website built around your services, so
+              customers can find you, trust you, and contact you quickly.
+            </p>
+            <ul>
+              <li>Plans starting at $99/month for ongoing website management.</li>
+              <li>Custom pages such as services, service areas, FAQs, about, and contact.</li>
+              <li>Lead-focused setup with click-to-call and contact forms routed to your inbox.</li>
+              <li>Handled for you: domain, business email, hosting, security, and search setup.</li>
+            </ul>
+          </article>
+
+          <article id="consulting-track" class="card stagger delay-4">
+            <h3>Track 2: Software Consultation</h3>
+            <p>Representative work across Node.js, React, Go, Scala, Kubernetes, Docker, Terraform, and AWS includes:</p>
+            <ul>
+              <li>Map-based sales territory planning web applications.</li>
+              <li>Live ticketing platform integrations with major partner ecosystems.</li>
+              <li>AI training platforms across distributed compute clusters.</li>
+              <li>E-commerce platforms with external integrations.</li>
+              <li>Identity and access implementations using Keycloak and Okta.</li>
+            </ul>
+          </article>
+
+          <article class="card stagger delay-4">
+            <h3>Zero Commitment Start</h3>
+            <p><strong>Web Presence. Engineer Firepower.</strong></p>
+            <ul>
+              <li>Live walkthrough before any build commitment.</li>
+              <li>Choose website track, software track, or a blended roadmap.</li>
+              <li>Approve scope first, then move into delivery and launch.</li>
+              <li>Simple flow: preview call, approval, build, launch.</li>
+            </ul>
+            <p>
+              <strong>Led by a Lead Engineer (10+ years):</strong> building production
+              systems, web platforms, and integrations for real-world business outcomes.
+            </p>
+          </article>
+
+          <article id="example" class="card stagger delay-4">
+            <h3>Case Snapshot: DP Piping</h3>
+            <p>
+              DP Piping showcases a scalable service-site model with 500+ pages mapped
+              to services and locations for broader search visibility.
+            </p>
+            <p>
+              While it fits trades like plumbing and HVAC, the same framework adapts
+              cleanly to many other service industries.
             </p>
             <p>
               Live site:
               <a href="https://dppiping.com/" target="_blank" rel="noopener noreferrer">dppiping.com</a>
-            </p>
-          </article>
-
-          <article class="card stagger delay-4">
-            <h3>Basic Plan</h3>
-            <ul>
-              <li>Core site build: Home, Services, child pages, areas, FAQs, About, Contact.</li>
-              <li>SEO foundations, analytics dashboard, and Google/Bing submissions.</li>
-              <li>Hosting, SSL, domain + email management, and maintenance support.</li>
-              <li>Plan limits: 5 GB mailbox/user and 250 form submissions/month.</li>
-            </ul>
-          </article>
-
-          <article class="card stagger delay-4">
-            <h3>Custom Solutions (Quoted)</h3>
-            <ul>
-              <li>Migration off existing platforms to a cleaner long-term stack.</li>
-              <li>Provider setup and migrations for Microsoft 365 or Google Workspace.</li>
-              <li>Custom backends, API work, and database integrations.</li>
-              <li>AI integrations for support, lead handling, and workflow automation.</li>
-              <li>Additional pages, design updates, and ads management add-ons.</li>
-            </ul>
-          </article>
-
-          <article class="card stagger delay-4">
-            <h3>Zero Commitment + Next Steps</h3>
-            <ul>
-              <li>Live video walkthrough before commitment.</li>
-              <li>Approve the direction, then full build begins.</li>
-              <li>Month-to-month service, cancel anytime, no long-term contract.</li>
-              <li>Schedule call, approve direction, build, then launch.</li>
-            </ul>
-            <p>
-              <strong>Built by a Senior SWE:</strong> 10+ years shipping production
-              systems, not just brochure sites.
             </p>
           </article>
         </section>
